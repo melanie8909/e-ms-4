@@ -1,0 +1,288 @@
+/*@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);*/
+@import url(notosanstc.css);
+@import url(heistd.css);
+body{
+  /* 先套用 Noto Sans TC 這個 思源黑體 */
+  font-family: 'hei7','Noto Sans TC', '微軟正黑體', sans-serif;
+}
+h1,h2,h3,h4,h5,h6,p,a{
+	color: #383838;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	line-height: 1em;
+}
+:root {
+	--white: #ffffff;
+	--black: #000000;
+	--ms3-gray: #BAAFAF;
+	--ms3-blue: #0E6EB8;
+	--ms3-border-lightblue: #3690CF;
+	--ms3-lightblue: #6BA8D1;
+	--ms3-green: #5EA647;
+	--ms3-red: #E62923;
+	--ms3-pink: #F47A7A;
+	--ms3-gradient-blue: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(221,242,250,1) 100%);
+	--ms3-yellow: #F4D523;
+	--ms3-orange: #E55927;
+}
+
+/* 高度%父層需有值 寬度vw 字尺寸vw 字相對單位em */
+
+.wrapper{
+	width: 100vw; /* 1920x1080px */
+	min-width: 1080px;
+	min-height: 1920px;
+	aspect-ratio: 9 / 16;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+
+/* 叫號區塊 */
+.block-dm{
+	width: 100vw; /* 1080px */
+	height: 111.111111111vw; /* 1200px */
+}
+.block-dm .box-title{
+	display: flex;
+	height: 15.1851851852vw; /* 164px */
+	border: 1px solid var(--black);
+}
+.block-dm .box-logo{
+	width: 51.4814814815vw; /* 556px */
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+.block-dm .box-time{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 48.5185185185vw; /* 524px */
+	/*height: 100%;*/
+	padding: 1.8518518519vw; /* 20px*/
+	box-sizing: border-box;
+}
+.block-dm .box-time p{
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	font-family: 'hei12',sans-serif;
+	font-size: 5.5vw;
+	letter-spacing: .05em;
+	line-height: 1.2em;
+	transform: scaleY(1.2);
+	color: var(--ms3-blue);
+}
+.block-dm .box-time p.time{
+	font-family: 'hei7',sans-serif;
+	font-size: 3vw;
+	transform: scaleY(1);
+	color: var(--black);
+}
+
+
+
+/* 叫號列 */
+.box-frame{
+	height: 95.9259259259vw; /* 1036px */
+	background-color: #f00;
+}
+.box-frame iframe{
+	width: 100%;
+	height: 95.9259259259vw; /* 1036px */
+}
+
+/* iframe內容的vh,vw會以box-frame尺寸為主 */
+.frame-content{
+	height: 95.9259259259vw; /* 1036px */
+	display: flex;
+	flex-direction: column;
+	/*justify-content: space-evenly;*/
+	justify-content: flex-start;
+	align-items: center;
+	overflow: hidden;
+	padding: 1.6666666667vw 0; /* 18px 0*/
+}
+.frame-content .card{
+	width: 96.2962962963vw; /* 1040px */
+	height: 16.6666666667vw; /* 180px */
+	border-radius: 5vw 5vw 5vw 5vw / 0.5vw 0.5vw 0.5vw 0.5vw;
+	box-shadow: 0 0 0 0.462962963vw var(--ms3-border-lightblue); /* 5px */
+
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+
+	margin-bottom: 2.3148148148vw; /* 25px */;
+}
+
+.frame-content .card .box-dept{
+	grid-area: 1 / 1 / 2 / 2; 
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-column-gap: 1.8518518519vw; /* 20px */
+	grid-row-gap: 0;
+
+	margin: 1.8518518519vw; /* 20px */
+}
+.frame-content .card .box-dept p:nth-child(1){ grid-area: 1 / 1 / 3 / 2; }
+.frame-content .card .box-dept p:nth-child(2){ grid-area: 1 / 2 / 2 / 5; }
+.frame-content .card .box-dept p:nth-child(3){ grid-area: 2 / 2 / 3 / 5; }
+.frame-content .card .box-dept p{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 5px;
+	border-radius: 0.5vw;
+}
+.frame-content .card .box-dept p:nth-child(1){ grid-area: 1 / 1 / 3 / 2; }
+
+/* 診號 */
+.frame-content .card .box-dept p:nth-child(1){
+	flex-direction: column;
+	font-size: 5vw;
+	font-family: 'hei9';
+	letter-spacing: -0.2vw;
+	background-color: var(--ms3-blue);
+	color: var(--white);
+}
+
+/* 醫師名 */
+.frame-content .card .box-dept p:nth-child(2){
+	font-size: 5vw;
+	font-family: 'hei9';
+	letter-spacing: .5vw;
+	color: var(--ms3-blue);
+}
+
+/* 科別名 */
+.frame-content .card .box-dept p:nth-child(3){
+	font-size: 5vw;
+	font-family: 'hei9';
+	letter-spacing: .5vw;
+	background-color: var(--ms3-yellow);
+}
+
+
+.frame-content .card .box-num{
+	grid-area: 1 / 2 / 2 / 3; 
+
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+
+	overflow: hidden;
+	/* 解決 grid子物件若有border 造成分配不均問題 */
+}
+
+.frame-content .card .box-num .box-now{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	grid-column-gap: 0;
+	grid-row-gap: 0;
+
+	border: 0.3vw solid var(--ms3-orange);
+	border-radius: 1vw;
+
+	margin: 1.3888888889vw; /* 15px */
+	margin-bottom: 2.7777777778vw; /* 30px */
+}
+.frame-content .card .box-num .box-now p:nth-child(1) { grid-area: 1 / 1 / 5 / 2; }
+.frame-content .card .box-num .box-now p:nth-child(2) { grid-area: 1 / 2 / 4 / 5; }
+.frame-content .card .box-num .box-now p:nth-child(3) { grid-area: 4 / 2 / 5 / 5; }
+.frame-content .card .box-num .box-now p{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2vw;
+	color: var(--white);
+}
+
+/* 目前號碼 */
+.frame-content .card .box-num .box-now p:nth-child(1){
+	background-color: var(--ms3-orange);
+	font-family: 'hei7';
+	font-size: 2.5vw;
+	text-align: center;
+	-webkit-writing-mode: vertical-lr;
+	writing-mode: vertical-lr;
+}
+/* 目前號碼 顯示號 */
+.frame-content .card .box-num .box-now p:nth-child(2){
+	color: var(--ms3-orange);
+	font-family: 'hei12';
+	font-size: 10vw;
+}
+/* 過號 */
+.frame-content .card .box-num .box-now p:nth-child(3){
+	color: var(--ms3-orange);
+	font-family: 'hei7';
+	font-size: 2.5vw;
+}
+
+.frame-content .card .box-num .box-next{
+	grid-area: 1 / 2 / 2 / 3;
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	grid-column-gap: 0;
+	grid-row-gap: 0;
+
+
+	border: 0.3vw solid var(--ms3-green);
+	border-radius: 1vw;
+
+	margin: 1.3888888889vw; /* 15px */
+	margin-bottom: 2.7777777778vw; /* 30px */
+}
+.frame-content .card .box-num .box-next p:nth-child(1) { grid-area: 1 / 1 / 5 / 2; }
+.frame-content .card .box-num .box-next p:nth-child(2) { grid-area: 1 / 2 / 4 / 5; }
+.frame-content .card .box-num .box-next p:nth-child(3) { grid-area: 4 / 2 / 5 / 5; }
+.frame-content .card .box-num .box-next p{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--white);
+}
+/* 下一號 */
+.frame-content .card .box-num .box-next p:nth-child(1){
+	background-color: var(--ms3-green);
+	font-family: 'hei7';
+	font-size: 2.5vw;
+	letter-spacing: .2vw;
+	text-align: center;
+	-webkit-writing-mode: vertical-lr;
+	writing-mode: vertical-lr;
+}
+/* 下一號 顯示號 */
+.frame-content .card .box-num .box-next p:nth-child(2){
+	color: var(--ms3-green);
+	font-family: 'hei12';
+	font-size: 10vw;
+	line-height: 0.8;
+}
+/* 順號 */
+.frame-content .card .box-num .box-next p:nth-child(3){
+	color: var(--ms3-green);
+	font-family: 'hei7';
+	font-size: 2.5vw;
+}
+
+
+/* 資訊區塊 */
+.block-info{
+	width: 100vw; /* 1080px */
+	height: 66.6666666667vw; /* 720px */
+	background-color: #ccc;
+}

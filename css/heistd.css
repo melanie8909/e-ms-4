@@ -1,0 +1,15 @@
+@font-face {
+  font-family: hei7;
+  src:local("DFHeiStd-W7.otf"),
+      url(fonts/DFHeiStd-W7.otf);
+}
+@font-face {
+  font-family: hei9;
+  src:local("DFHeiStd-W9.otf"),
+      url(fonts/DFHeiStd-W9.otf);
+}
+@font-face {
+  font-family: hei12;
+  src:local("DFHeiStd-W12.otf"),
+      url(fonts/DFHeiStd-W12.otf);
+}
